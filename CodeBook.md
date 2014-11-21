@@ -11,7 +11,7 @@ Details about the dataset are available at the [UCI ML repository](http://archiv
 I refer the reader to the raw data's README and associated documentation to learn about how the data are collected.
 
 ----
-## Code book
+## Code Book
 Before reading about how the output datset, I encourage review of the README and associated txt files provided with the raw dataset.  It explains how the raw data were collected and describes what data are available.  The rest of this description assumes familiarity with the raw data set.
 
 Each row in the dataset output by this script is keyed by subject ID and activity label.  Each of the remaining 79 columns represents the mean value of a feature measured by the accelerometer.  The feature columns are limited to any column from the original data set that measures either a mean or standard deviation value.  That is, the output dataset provides the mean of the mean value or the mean value of the stand deviation.  Each feature is prefixed with either an 'f' or a 't'.  'f' indicates a frequency domain measurement, while 't' indicates a time domain measurement.  Further discussion about frequency vs time domain measurements in available in features_info.txt.
