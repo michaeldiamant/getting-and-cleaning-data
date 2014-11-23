@@ -110,8 +110,12 @@ subjectActivityMeans <- dcast(
   data = meltedMeansAndStdDevs, 
   formula = subjectId + activityLabel ~ variable, 
   fun.aggregate = mean)  
+tidySubjectActivityMeans <- melt(
+  data = subjectActivityMeans,
+  id.vars = c('subjectId', 'activityLabel'),
+  value.name = 'mean') 
 
 message('Writing subject activity means to disk')
 outputFilename <- 'subject_activity_means.txt'
-write.table(subjectActivityMeans, row.names = F, file = outputFilename)
+write.table(tidySubjectActivityMeans, row.names = F, file = outputFilename)
 message(paste('Dataset written to', paste(getwd(), '/', outputFilename, sep = '')))
